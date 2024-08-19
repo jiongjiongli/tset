@@ -65,8 +65,8 @@ def main() -> None:
         picard_args, model_args, data_args, data_training_args, training_args = parser.parse_dict(args=data)
     else:
         picard_args, model_args, data_args, data_training_args, training_args = parser.parse_args_into_dataclasses()
-    
-    # If model_name_or_path includes ??? instead of the number of steps, 
+
+    # If model_name_or_path includes ??? instead of the number of steps,
     # we load the latest checkpoint.
     if 'checkpoint-???' in model_args.model_name_or_path:
         model_args.model_name_or_path = get_last_checkpoint(
@@ -232,7 +232,7 @@ def main() -> None:
         #     trainer = CoSQLTrainer(**trainer_kwargs)
         if data_args.dataset in ["lc_quad_2", "qald_9", "qald_10"]:
             trainer = QuadTrainer(**trainer_kwargs)
-        elif data_args.dataset == "lc_quad_pre":
+        elif data_args.dataset in ["lc_quad_pre", "lc_quad_pre_cn"]:
             trainer = QuadPreTrainer(**trainer_kwargs)
         else:
             raise NotImplementedError()
@@ -288,7 +288,7 @@ def main() -> None:
             logger.info("*** Predict ***")
             for section, test_split in dataset_splits.test_splits.items():
                 results = trainer.predict(
-                    test_split.dataset, 
+                    test_split.dataset,
                     test_split.examples,
                     max_length=data_training_args.val_max_target_length,
                     max_time=data_training_args.val_max_time,

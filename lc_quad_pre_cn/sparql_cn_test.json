@@ -1,0 +1,11 @@
+[
+    {
+        "sparql_wikidata": "DESCRIBE ?book WHERE { ?book wdt:P31 wd:Q571 . ?book wdt:P50 wd:Q5582 }"
+    },
+    {
+        "sparql_wikidata": "DESCRIBE ?city WHERE { ?city wdt:P31 wd:Q515 . ?city wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?author ?book WHERE { ?author wdt:P106 wd:Q5582 . ?book wdt:P50 ?author . ?book wdt:P31 wd:Q571 }"
+    }
+]

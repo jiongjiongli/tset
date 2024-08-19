@@ -1,0 +1,74 @@
+[
+  {
+    "input": "select ?vr0 where { wd:q1045 p:p1082 ?vr1 . ps:p1082 ?vr1 ?vr0 . ?vr2 ?vr1 pq:p585 filter(contains(str(?vr2), '2009')) }",
+    "target": "select ?vr0 where { wd:q1045 p:p1082 ?vr1 . ?vr1 ps:p1082 ?vr0 . ?vr1 pq:p585 ?vr2 filter(contains(str(?vr2), '2009')) }"
+  },
+  {
+    "input": "select ?vr0 where { ?vr0 wdt:p725 wd:q16538 . wdt:p106 ?vr0 wd:q177220 }",
+    "target": "select ?vr0 where { wd:q16538 wdt:p725 ?vr0 . ?vr0 wdt:p106 wd:q177220 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 wd:q11424 ?vr0 . ?vr0 wdt:p57 wd:q937 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q11424 . ?vr0 wdt:p57 wd:q937 }"
+  },
+  {
+    "input": "select ?vr0 where { ?vr0 wdt:p106 wd:q5582 . wdt:p119 ?vr0 wd:q132241 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p106 wd:q5582 . ?vr0 wdt:p119 wd:q132241 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q571 . wd:q5582 ?vr0 wdt:p50 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q571 . ?vr0 wdt:p50 wd:q5582 }"
+  },
+  {
+    "input": "select ?vr0 where { ?vr0 wd:q515 wdt:p31 . wdt:p17 ?vr0 wd:qchina }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q515 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wd:q43229 wdt:p31 ?vr0 . wdt:p17 ?vr0 wd:qchina }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q43229 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q482994 . ?vr0 wd:q1730 wdt:p175 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q482994 . ?vr0 wdt:p175 wd:q1730 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q34770 . wdt:p17 ?vr0 wd:qchina }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q34770 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wd:q16521 wdt:p31 ?vr0 . wd:qchina ?vr0 wdt:p17 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q16521 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q15180 . ?vr0 wd:qchina wdt:p17 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q15180 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p108 wd:q5582 ?vr0 . ?vr0 wd:q177220 wdt:p106 }",
+    "target": "select ?vr0 where { wd:q5582 wdt:p108 ?vr0 . ?vr0 wdt:p106 wd:q177220 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 wd:q5 ?vr0 . ?vr0 wdt:p106 wd:q33999 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q5 . ?vr0 wdt:p106 wd:q33999 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q5 . ?vr0 wd:q9019 wdt:p106 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q5 . ?vr0 wdt:p106 wd:q9019 }"
+  },
+  {
+    "input": "select ?vr0 where { wdt:p31 ?vr0 wd:q146 . wdt:p17 wd:qchina ?vr0 }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q146 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 where { wd:q6256 ?vr0 wdt:p31 . ?vr1 wdt:p1082 ?vr0 . filter(?vr1 > 100000000) }",
+    "target": "select ?vr0 where { ?vr0 wdt:p31 wd:q6256 . ?vr0 wdt:p1082 ?vr1 . filter(?vr1 > 100000000) }"
+  },
+  {
+    "input": "ask where { wd:q42 wd:q5 wdt:p31 }",
+    "target": "ask where { wd:q42 wdt:p31 wd:q5 }"
+  },
+  {
+    "input": "construct { wd:q5 ?vr0 wdt:p31 } where { wd:q5 ?vr0 wdt:p31 }",
+    "target": "construct { ?vr0 wdt:p31 wd:q5 } where { ?vr0 wdt:p31 wd:q5 }"
+  }
+]

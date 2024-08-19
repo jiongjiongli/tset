@@ -1,0 +1,14 @@
+[
+  {
+    "input": "describe ?vr0 where { ?vr0 wd:q571 wdt:p31 . wdt:p50 wd:q5582 ?vr0 }",
+    "target": "describe ?vr0 where { ?vr0 wdt:p31 wd:q571 . ?vr0 wdt:p50 wd:q5582 }"
+  },
+  {
+    "input": "describe ?vr0 where { wd:q515 wdt:p31 ?vr0 . wdt:p17 ?vr0 wd:qchina }",
+    "target": "describe ?vr0 where { ?vr0 wdt:p31 wd:q515 . ?vr0 wdt:p17 wd:qchina }"
+  },
+  {
+    "input": "select ?vr0 ?vr1 where { wd:q5582 ?vr0 wdt:p106 . ?vr0 ?vr1 wdt:p50 . wdt:p31 ?vr1 wd:q571 }",
+    "target": "select ?vr0 ?vr1 where { ?vr0 wdt:p106 wd:q5582 . ?vr1 wdt:p50 ?vr0 . ?vr1 wdt:p31 wd:q571 }"
+  }
+]

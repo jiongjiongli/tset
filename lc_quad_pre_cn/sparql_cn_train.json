@@ -1,0 +1,56 @@
+[
+    {
+        "sparql_wikidata": "SELECT ?obj WHERE { wd:Q1045 p:P1082 ?s . ?s ps:P1082 ?obj . ?s pq:P585 ?x FILTER(CONTAINS(STR(?x), '2009')) }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?answer WHERE { wd:Q16538 wdt:P725 ?answer . ?answer wdt:P106 wd:Q177220 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?movie WHERE { ?movie wdt:P31 wd:Q11424 . ?movie wdt:P57 wd:Q937 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?author WHERE { ?author wdt:P106 wd:Q5582 . ?author wdt:P119 wd:Q132241 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?book WHERE { ?book wdt:P31 wd:Q571 . ?book wdt:P50 wd:Q5582 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?city WHERE { ?city wdt:P31 wd:Q515 . ?city wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?company WHERE { ?company wdt:P31 wd:Q43229 . ?company wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?album WHERE { ?album wdt:P31 wd:Q482994 . ?album wdt:P175 wd:Q1730 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?language WHERE { ?language wdt:P31 wd:Q34770 . ?language wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?event WHERE { ?event wdt:P31 wd:Q16521 . ?event wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?place WHERE { ?place wdt:P31 wd:Q15180 . ?place wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?person WHERE { wd:Q5582 wdt:P108 ?person . ?person wdt:P106 wd:Q177220 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?actor WHERE { ?actor wdt:P31 wd:Q5 . ?actor wdt:P106 wd:Q33999 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?scientist WHERE { ?scientist wdt:P31 wd:Q5 . ?scientist wdt:P106 wd:Q9019 }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?item WHERE { ?item wdt:P31 wd:Q146 . ?item wdt:P17 wd:QChina }"
+    },
+    {
+        "sparql_wikidata": "SELECT ?country WHERE { ?country wdt:P31 wd:Q6256 . ?country wdt:P1082 ?population . FILTER(?population > 100000000) }"
+    },
+    {
+        "sparql_wikidata": "ASK WHERE { wd:Q42 wdt:P31 wd:Q5 }"
+    },
+    {
+        "sparql_wikidata": "CONSTRUCT { ?person wdt:P31 wd:Q5 } WHERE { ?person wdt:P31 wd:Q5 }"
+    }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "input": "describe <extra_id_69> <extra_id_49> <extra_id_63> <extra_id_69> <extra_id_83> q571 <extra_id_84> p31 <extra_id_68> <extra_id_84> p50 <extra_id_83> q5582 <extra_id_69> <extra_id_45>",
+    "target": "describe <extra_id_69> <extra_id_49> <extra_id_63> <extra_id_69> <extra_id_84> p31 <extra_id_83> q571 <extra_id_68> <extra_id_69> <extra_id_84> p50 <extra_id_83> q5582 <extra_id_45>"
+  },
+  {
+    "input": "describe <extra_id_69> <extra_id_49> <extra_id_63> <extra_id_83> q515 <extra_id_84> p31 <extra_id_69> <extra_id_68> <extra_id_84> p17 <extra_id_69> <extra_id_83> qchina <extra_id_45>",
+    "target": "describe <extra_id_69> <extra_id_49> <extra_id_63> <extra_id_69> <extra_id_84> p31 <extra_id_83> q515 <extra_id_68> <extra_id_69> <extra_id_84> p17 <extra_id_83> qchina <extra_id_45>"
+  },
+  {
+    "input": "<extra_id_36> <extra_id_69> <extra_id_70> <extra_id_49> <extra_id_63> <extra_id_83> q5582 <extra_id_69> <extra_id_84> p106 <extra_id_68> <extra_id_69> <extra_id_70> <extra_id_84> p50 <extra_id_68> <extra_id_84> p31 <extra_id_70> <extra_id_83> q571 <extra_id_45>",
+    "target": "<extra_id_36> <extra_id_69> <extra_id_70> <extra_id_49> <extra_id_63> <extra_id_69> <extra_id_84> p106 <extra_id_83> q5582 <extra_id_68> <extra_id_70> <extra_id_84> p50 <extra_id_69> <extra_id_68> <extra_id_70> <extra_id_84> p31 <extra_id_83> q571 <extra_id_45>"
+  }
+]

@@ -146,6 +146,7 @@ class DataArguments:
         default_factory=lambda: {
             "lc_quad_2": "./seq2seq/datasets/lc_quad_2",
             "lc_quad_pre": "./seq2seq/datasets/lc_quad_pre",
+            "lc_quad_pre_cn": "./seq2seq/datasets/lc_quad_pre_cn",
             "qald_9": "./seq2seq/datasets/qald_9",
             "qald_10": "./seq2seq/datasets/qald_10",
         },
@@ -160,6 +161,7 @@ class DataArguments:
         default_factory=lambda: {
             "lc_quad_2":"./seq2seq/metrics/lc_quad_2",
             "lc_quad_pre":"./seq2seq/metrics/lc_quad_pre",
+            "lc_quad_pre_cn": "./seq2seq/metrics/lc_quad_pre",
             "qald_9":"./seq2seq/metrics/lc_quad_2",
             "qald_10":"./seq2seq/metrics/lc_quad_2",
         },
@@ -235,13 +237,13 @@ def _prepare_train_split(
         #remove_columns=column_names,
         load_from_cache_file=not data_training_args.overwrite_cache,
     )
-    
+
     # train_input_ids = [dataset[i]['input_ids'] for i in range(len(dataset))]
     # relation_matrix_l = preprocess_by_dataset(
-    #      data_args.data_base_dir, 
-    #      data_args.split_dataset, 
-    #      train_input_ids, 
-    #      "train" 
+    #      data_args.data_base_dir,
+    #      data_args.split_dataset,
+    #      train_input_ids,
+    #      "train"
     #      )
 
     # relation_matrix_l = [rel2id.get_relation_id(data) for data in dataset]
@@ -251,7 +253,7 @@ def _prepare_train_split(
 
 
     # def add_relation_info_train(example, idx, relation_matrix_l=relation_matrix_l):
-    #     example['relations'] = relation_matrix_l[idx]  
+    #     example['relations'] = relation_matrix_l[idx]
     #     return example
     # dataset = dataset.map(add_relation_info_train, with_indices=True)
 
@@ -265,7 +267,7 @@ def _prepare_eval_split(
     #add_serialized_schema: Callable[[dict], dict],
     pre_process_function: Callable[[dict, Optional[int], Optional[int]], dict],
 ) -> EvalSplit:
-    if (data_training_args.max_val_samples is not None 
+    if (data_training_args.max_val_samples is not None
             and data_training_args.max_val_samples < len(dataset)):
         eval_examples = dataset.select(range(data_training_args.max_val_samples))
     else:
@@ -289,20 +291,20 @@ def _prepare_eval_split(
         #remove_columns=column_names,
         load_from_cache_file=not data_training_args.overwrite_cache,
     )
-    
+
     # dev_input_ids = [eval_dataset[i]['input_ids'] for i in range(len(eval_dataset))]
     # relation_matrix_l = preprocess_by_dataset(
-    #      data_args.data_base_dir, 
-    #      data_args.split_dataset, 
-    #      dev_input_ids, 
-    #      "dev" 
+    #      data_args.data_base_dir,
+    #      data_args.split_dataset,
+    #      dev_input_ids,
+    #      "dev"
     #      )
 
     # relation_matrix_l = [rel2id.get_relation_id(data) for data in eval_dataset]
     #relation_matrix_l = pickle.load(open('./seq2seq/relation_infusion/dev_relation.pkl', 'rb'))
 
     # def add_relation_info_train(example, idx, relation_matrix_l=relation_matrix_l):
-    #     example['relations'] = relation_matrix_l[idx]  
+    #     example['relations'] = relation_matrix_l[idx]
     #     return example
     # eval_dataset = eval_dataset.map(add_relation_info_train, with_indices=True)
 
@@ -318,7 +320,7 @@ def prepare_splits(
     pre_process_function: Callable[[dict, Optional[int], Optional[int]], dict],
 ) -> DatasetSplits:
     train_split, eval_split, test_splits = None, None, None
-    
+
     if training_args.do_train:
         train_split = _prepare_train_split(
             dataset_dict["train"],
@@ -349,9 +351,9 @@ def prepare_splits(
         }
 
     return DatasetSplits(
-        train_split=train_split, 
-        eval_split=eval_split, 
-        test_splits=test_splits, 
+        train_split=train_split,
+        eval_split=eval_split,
+        test_splits=test_splits,
         #schemas=schemas
     )
 

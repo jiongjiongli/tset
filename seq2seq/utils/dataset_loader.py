@@ -42,7 +42,7 @@ def load_dataset(
     training_args: TrainingArguments,
     tokenizer: PreTrainedTokenizerFast,
 ) -> Tuple[Metric, DatasetSplits]:
-    
+
 
     _lc_quad_2_dataset_dict : Callable[[], DatasetDict] = lambda: datasets.load.load_dataset(
         path=data_args.dataset_paths['lc_quad_2'], cache_dir=model_args.cache_dir
@@ -50,13 +50,20 @@ def load_dataset(
     _lc_quad_2_metric: Callable[[], Metric] = lambda: datasets.load.load_metric(
         path=data_args.metric_paths["lc_quad_2"], config_name=data_args.metric_config, test_suite_db_dir=data_args.test_suite_db_dir
     )
-    
-    
+
+
     _lc_quad_pre_dataset_dict : Callable[[], DatasetDict] = lambda: datasets.load.load_dataset(
         path=data_args.dataset_paths['lc_quad_pre'], cache_dir=model_args.cache_dir
     )
     _lc_quad_pre_metric: Callable[[], Metric] = lambda: datasets.load.load_metric(
         path=data_args.metric_paths["lc_quad_pre"], config_name=data_args.metric_config, test_suite_db_dir=data_args.test_suite_db_dir
+    )
+
+    _lc_quad_pre_cn_dataset_dict : Callable[[], DatasetDict] = lambda: datasets.load.load_dataset(
+        path=data_args.dataset_paths['lc_quad_pre_cn'], cache_dir=model_args.cache_dir
+    )
+    _lc_quad_pre_cn_metric: Callable[[], Metric] = lambda: datasets.load.load_metric(
+        path=data_args.metric_paths["lc_quad_pre_cn"], config_name=data_args.metric_config, test_suite_db_dir=data_args.test_suite_db_dir
     )
 
     #_lc_quad_add_serialized_schema = lambda ex:lc_quad_add_serialized_schema(
@@ -70,7 +77,7 @@ def load_dataset(
         data_training_args=data_training_args,
         tokenizer=tokenizer,
     )
-    
+
     _lc_quad_pre_pre_process_function = lambda batch, max_source_length, max_target_length: lc_quad_pre_pre_process_function(
         batch=batch,
         max_source_length=max_source_length,
@@ -97,7 +104,7 @@ def load_dataset(
         "training_args": training_args,
         "data_training_args": data_training_args,
     }
-    
+
     if data_args.dataset == "lc_quad_2":
         metric = _lc_quad_2_metric()
         dataset_splits = prepare_splits(
@@ -110,6 +117,14 @@ def load_dataset(
         metric = _lc_quad_pre_metric()
         dataset_splits = prepare_splits(
             dataset_dict=_lc_quad_pre_dataset_dict(),
+            #add_serialized_schema=_lc_quad_add_serialized_schema,
+            pre_process_function=_lc_quad_pre_pre_process_function,
+            **_prepare_splits_kwargs,
+        )
+    elif data_args.dataset == "lc_quad_pre_cn":
+        metric = _lc_quad_pre_cn_metric()
+        dataset_splits = prepare_splits(
+            dataset_dict=_lc_quad_pre_cn_dataset_dict(),
             #add_serialized_schema=_lc_quad_add_serialized_schema,
             pre_process_function=_lc_quad_pre_pre_process_function,
             **_prepare_splits_kwargs,
@@ -130,7 +145,7 @@ def load_dataset(
             pre_process_function=_lc_quad_pre_process_function,
             **_prepare_splits_kwargs,
         )
-    
+
     else:
         raise NotImplementedError()
 
