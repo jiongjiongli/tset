@@ -1,0 +1,27 @@
+{
+        "NNQT_question": "What is {voice actresses} of {South Park}, that has {employment} is {singer} ?",
+        "uid": 12761,
+        "subgraph": "right-subgraph",
+        "template_index": 5331,
+        "question": "Which female actress is the voice over on South Park and is employed as a singer?",
+        "sparql_wikidata": "SELECT ?answer WHERE { wd:Q16538 wdt:P725 ?answer . ?answer wdt:P106 wd:Q177220}",
+        "sparql_dbpedia18": "SELECT ?answer WHERE { ?statement1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://wikidata.dbpedia.org/resource/Q16538> . ?statement1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://www.wikidata.org/entity/P725>. ?statement1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?answer . ?statement2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> ?answer. ?statement2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://www.wikidata.org/entity/P106> . ?statement2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://wikidata.dbpedia.org/resource/Q177220> . }",
+        "template": "E REF ?F . ?F RFG G",
+        "answer": [],
+        "template_id": 1,
+        "paraphrased_question": "Which female actress on South Park is the voice over and is used as a singer?"
+    },
+    {
+        "NNQT_question": "What is {nominated for} of {Dolores del R\u00edo} that is {for work} is {La Otra} ?",
+        "uid": 4236,
+        "subgraph": "statement_property",
+        "template_index": 681,
+        "question": "What is {nominated for} of {Dolores del R\u00edo} that is {for work} is {La Otra} ?",
+        "sparql_wikidata": "SELECT ?obj WHERE { wd:Q124057 p:P1411 ?s . ?s ps:P1411 ?obj . ?s pq:P1686 wd:Q3915489 }",
+        "sparql_dbpedia18": "select distinct ?obj  where {\n?statement <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://wikidata.dbpedia.org/resource/Q124057> .\n?statement <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://www.wikidata.org/entity/P1411> .\n?statement <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> ?obj .\n?statement <http://www.wikidata.org/entity/P1686> <http://wikidata.dbpedia.org/resource/Q3915489>\n} \n",
+        "template": "(E pred F) prop ?value",
+        "answer": [],
+        "template_id": "statement_property_2",
+        "paraphrased_question": "What nomination did Dolores del Rio receive for their work with La Otra?"
+    }
+]
